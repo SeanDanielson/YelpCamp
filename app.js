@@ -5,8 +5,8 @@ var express = require("express"),
     passport = require("passport"),
     flash = require('connect-flash'),
     LocalStrategy = require("passport-local"),
-    methodOverride = require("method-override");
-    // seedDB = require("./seeds");
+    methodOverride = require("method-override"),
+    seedDB = require("./seeds");
 
 // ROUTE IMPORTS
 var commentRoutes = require("./routes/comments"),
