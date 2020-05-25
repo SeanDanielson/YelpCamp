@@ -27,7 +27,8 @@ var app = express();
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
 // mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
-mongoose.connect("mongodb+srv://Sean:Break_my_fac3@cluster0-czzmq.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+
 
 // EXPRESS/ BODY-PARSER CONFIG
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -64,6 +65,3 @@ app.use("/campgrounds", campgroundRoutes);
 app.listen(process.env.PORT, process.env.IP, function () {
     console.log("server listening...");
 });
-// app.listen(3000, function () {
-//     console.log("server listening...");
-// });
